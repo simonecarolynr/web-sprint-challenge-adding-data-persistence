@@ -9,17 +9,17 @@ exports.up = function(knex) {
         tbl.boolean('completed').notNullable().defaultTo(false);
     })
     
-    .createTable("project", tbl => {
-        tbl.increments("id")
-        tbl
-            .integer("project_id")
-            .references("id")
-            .inTable("project")
-            .notNull()
-        tbl.text("name").notNull()
-        tbl.text("description")
-        tbl.bool("completed").defaultTo(false)
-    })
+    // .createTable("project", tbl => {
+    //     tbl.increments("id")
+    //     tbl
+    //         .integer("project_id")
+    //         .references("id")
+    //         .inTable("projects")
+    //         .notNull()
+    //     tbl.text("name").notNull()
+    //     tbl.text("description")
+    //     tbl.bool("completed").defaultTo(false)
+    // })
 
     .createTable("resources", tbl => {
         tbl.increments("id")

@@ -1,6 +1,6 @@
 
 exports.seed = function(knex) {
-  return knex("resource").insert([   
+  return knex("resources").insert([   
     { project_id: 1, name: "side gigs", description: "graphic design, web design, consulting" },
     { project_id: 1, name: "budget", description: "" },
     { project_id: 2, name: "applications", description: "from jobs I want" },
