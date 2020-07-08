@@ -1,5 +1,5 @@
 const express = require("express")
-const project = require("../models/project")
+const project = require("../data/seeds/001-project")
 
 const router = express.Router()
 

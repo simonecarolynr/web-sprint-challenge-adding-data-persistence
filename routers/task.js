@@ -1,5 +1,5 @@
 const express = require("express")
-const task = require("../models/task")
+const task = require("../data/seeds/003-task")
 
 const router = express.Router()
 

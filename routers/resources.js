@@ -1,5 +1,5 @@
 const express = require("express")
-const resource = require("../models/resources")
+const resource = require("../data/seeds/002-resource")
 
 const router = express.Router()
 
