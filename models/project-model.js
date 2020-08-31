@@ -19,7 +19,7 @@ function find() {
     return db("projects")
 }
 
-function findTask() {
+function findTask(id) {
     return db("task as t")
     .join("project as p", "p.id", "t.project_id")
     .select("t.id", "p.name", "p.description", "t.name", "t.description", "t.notes", "t.completed")
