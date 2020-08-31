@@ -35,6 +35,6 @@ exports.down = function(knex) {
     .dropTableIfExists("task")
     .dropTableIfExists("project_resource")
     .dropTableIfExists("resource")
-    .dropTableIfExists("projects")
+    .dropTableIfExists("project")
 };
 

@@ -1,4 +1,4 @@
-const db = require('../migrations/dbConfig')
+const db = require('../dbConfig')
 const resource = require('../routers/resources-router')
 
 function add(newResource) {

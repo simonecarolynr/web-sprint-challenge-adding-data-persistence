@@ -1,7 +1,5 @@
 const express = require('express')
 const projectDb = require('../models/project-model')
-const resourceDb = require('../models/resource-model')
-const taskDb = require('../models/task-model')
 
 const project = express.Router()
 
@@ -25,7 +23,6 @@ project.post('/project/:id/task', async (req, res, next) => {
     } catch(err) {
         next(err)
     }
-    projectDb.addTask()
 })
 
 //RETRIEVES all projects /project
@@ -37,7 +34,6 @@ project.get('/project', async (req, res, next) => {
     } catch(err) {
         next(err)
     }
-    projectDb.find()
 })
 
 // *** STRETCH: RETRIEVES project by ID /project/:id ***

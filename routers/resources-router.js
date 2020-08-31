@@ -15,7 +15,7 @@ resource.post('/resource', async (req, res, next) => {
 })
 
 //RETRIEVES all resources /resource
-resource.get('resource', async (req, res, next) => {
+resource.get('/resource', async (req, res, next) => {
     try {
         const resources = await db.find()
 

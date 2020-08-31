@@ -1,29 +1,27 @@
-const db = require('../migrations/dbConfig')
-const project = require('../routers/project-router')
-
+const db = require('../dbConfig')
 
 function add(newProject) {
-    return db("projects")
+    return db("project")
     .insert(newProject)
 }
 
 function addTask(newTask, projectId) {
     return db("task as t")
-    .join("projects as p", "p.id", "t.project_id")
+    .join("project as p", "p.id", "t.project_id")
     .insert(newTask)
     .into("task")
     .where("t.project_id", projectId)
 }
 
 function find() {
-    return db("projects")
+    return db("project")
 }
 
 function findTask(id) {
     return db("task as t")
+    .select("t.id", "p.name", "p.description", "t.description", "t.notes", "t.completed")
+    .where("t.project_id", id)
     .join("project as p", "p.id", "t.project_id")
-    .select("t.id", "p.name", "p.description", "t.name", "t.description", "t.notes", "t.completed")
-    .where("p.id", id)
 }
 
 
