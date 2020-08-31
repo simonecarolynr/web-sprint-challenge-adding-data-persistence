@@ -18,6 +18,7 @@ exports.up = function(knex) {
         tbl.increments("id")
         tbl.text("description").notNull()
         tbl.text("notes")
+        tbl.integer("project_id").notNull().references("id").inTable("projects")
         tbl.boolean("completed").defaultTo(0).notNull()
     })
 };
@@ -28,3 +29,4 @@ exports.down = function(knex) {
     .dropTableIfExists("resource")
     .dropTableIfExists("projects")
 };
+
